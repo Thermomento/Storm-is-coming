@@ -19,14 +19,14 @@ DATA = HERE / "data"
 OUT = HERE / "out"
 
 df = pd.read_csv(
-    DATA / "ibtracs-west-pacific.csv",
+    DATA / "ibtracs-wp-2000-2026.csv",
     skiprows=[1],
-    usecols=["SID", "SEASON", "LAT", "LON", "WMO_WIND"],   # ← 加上 SEASON
+    usecols=["SID", "SEASON", "LAT", "LON", "WMO_WIND"],  
     low_memory=False,
 )
 
-df = df.dropna(subset=["LAT", "LON", "WMO_WIND"])           # ← 要求三个都有值
-df = df[df["SEASON"] >= 2000]                                # ← 只要 2000 年以后的
+df = df.dropna(subset=["LAT", "LON", "WMO_WIND"])           
+df = df[df["SEASON"] >= 2000]                               
 
 OUT.mkdir(exist_ok=True)
 
