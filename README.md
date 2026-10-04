@@ -1,34 +1,17 @@
-# The phenomenon
+# Western North Pacific Storm Tracks
 
-<!-- This is the SD5913 assignment 2 template. Everything in this file is yours to
-replace, and the check counts words: comments like this one are not words, so
-delete each one as you write. Start with the heading: name the phenomenon.
+## The Phenomenon
+Typhoons and tropical cyclones in the Western North Pacific. These are massive, rotating storm systems that form over warm ocean waters and move westward and northward, driven by atmospheric pressure gradients. I looked at them because their tracks and intensity directly affect Hong Kong and East Asia.
 
-Then, in this order, at least 150 words in total.
+## The Source
+[NOAA IBTrACS v04r01](https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.WP.list.v04r01.csv)
+The dataset contains historical storm records from 1848 onwards. For this project, I trimmed it to 2000¨C2026 to keep the file size under GitHub's limit, resulting in ~300,000 rows. Each row represents a 3-hourly observation of a storm's location (LAT, LON in degrees) and maximum sustained wind speed (WMO_WIND in knots).
 
-New to folders, paths, or the files here whose names start with a dot? Read
-https://github.com/sd5913/pfad/blob/2026/reference/files.md first. Ten minutes. -->
+## The Picture
+![Storm Tracks](out/storm-corridor.png)
 
-![what the picture is](out/plot.png)
+## What It Shows and Hides
+The map displays the collective "corridor" of storm tracks in the Western North Pacific, highlighting how intense (dark red) storms cluster in lower latitudes before curving northeast. It hides the exact temporal progression of individual storms and their physical size. Additionally, historical storms before 2000 are omitted to maintain a manageable file size for the repository.
 
-## The phenomenon
-
-<!-- What goes up and down, and why you looked at it. -->
-
-## The source
-
-<!-- A link to the page or endpoint the file came from, and one line on what is in
-the file: how many rows, what a row means, what the units are. -->
-
-## What the picture shows
-
-<!-- Two or three sentences. Including what it hides: every transformation throws
-something away, and naming what yours threw away is the easiest way to sound like
-you know what you did. -->
-
-## Run it
-
-```
-uv run fetch.py
-uv run plot.py
-```
+## How to Run It
+`uv run plot.py`
